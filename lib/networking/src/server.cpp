@@ -242,7 +242,8 @@ void HTTPSession::handleRequest() {
         result.set(boost::beast::http::field::server, BOOST_BEAST_VERSION_STRING);
         result.set(boost::beast::http::field::content_type, "text/html");
         result.keep_alive(request.keep_alive());
-        result.body() = why.to_string();
+        //result.body() = why.to_string();
+        result.body() = std::string(why.data(), why.size());
         result.prepare_payload();
         return result;
     };

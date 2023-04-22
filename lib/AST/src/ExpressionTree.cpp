@@ -186,7 +186,7 @@ std::deque<std::string> ExpressionTree::splitString(std::string expression) {
                 pos = i;
                 alnum = true;
             }
-        } else if (ispunct(expression[i]) && !(expression[i] == '-' || expression[i] == '>' || expression[i] == '{' || expression[i] == '}' || expression[i] == ',')) {
+        } else if (ispunct(expression[i]) && !(expression[i] == ',')) {
             if (alnum) {
                 splits.emplace_back(expression.substr(pos, i-pos));
                 alnum = false;
